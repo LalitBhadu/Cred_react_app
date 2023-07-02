@@ -27,14 +27,25 @@ function Navbar() {
                     Crud
                   </a>
                 </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="api">
+                    API
+                  </a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="count">
                     Count
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="api">
-                    API
+                  <a class="nav-link" href="count1">
+                    Count1
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="count2">
+                    Count2
                   </a>
                 </li>
               </ul>

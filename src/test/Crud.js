@@ -53,13 +53,10 @@ const Crud = (props) => {
       <div className="container">
         <h1>
           <strong>{props.title}</strong>
+          <br />
+          {props.discrip}
         </h1>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder={props.discrip}
-        />
+        <input type="text" value={inputValue} onChange={handleInputChange} />
         <button onClick={handleAddItem} type="button" className="btn1">
           {editMode ? "Update Item" : "Add Item"}
         </button>
