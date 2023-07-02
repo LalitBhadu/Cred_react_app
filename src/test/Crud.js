@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Crud.css";
+import Navbar from "./Navbar";
 
 const Crud = (props) => {
   const [data, setData] = useState([]);
@@ -46,49 +47,53 @@ const Crud = (props) => {
   // };
 
   return (
-    <div className="crud">
-      <h1>
-        <strong>{props.title}</strong>
-      </h1>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        placeholder={props.discrip}
-      />
-      <button onClick={handleAddItem} type="button" className="btn1">
-        {editMode ? "Update Item" : "Add Item"}
-      </button>
+    <>
+      <Navbar />
 
-      <ul>
-        {data.map((item, index) => (
-          <li key={index}>
-            {item}
-            <button
-              onClick={() => handleUpdateItem(index)}
-              type="button"
-              className="btn2"
-            >
-              Update
-            </button>
-            <button
-              onClick={() => handleDeleteItem(index)}
-              type="button"
-              className="btn3"
-            >
-              Delete
-            </button>
-            {/* <button
+      <div className="container">
+        <h1>
+          <strong>{props.title}</strong>
+        </h1>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder={props.discrip}
+        />
+        <button onClick={handleAddItem} type="button" className="btn1">
+          {editMode ? "Update Item" : "Add Item"}
+        </button>
+
+        <ul>
+          {data.map((item, index) => (
+            <li key={index}>
+              {item}
+              <button
+                onClick={() => handleUpdateItem(index)}
+                type="button"
+                className="btn2"
+              >
+                Update
+              </button>
+              <button
+                onClick={() => handleDeleteItem(index)}
+                type="button"
+                className="btn3"
+              >
+                Delete
+              </button>
+              {/* <button
               onClick={() => handleClearItem(index)}
               type="button"
               className="btn3"
             >
               Clear
             </button> */}
-          </li>
-        ))}
-      </ul>
-    </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
