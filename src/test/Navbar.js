@@ -39,13 +39,8 @@ function Navbar() {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="count1">
-                    Count1
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="count2">
-                    Count2
+                  <a class="nav-link" href="forms">
+                    Login
                   </a>
                 </li>
               </ul>

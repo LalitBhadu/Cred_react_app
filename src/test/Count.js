@@ -64,28 +64,60 @@
 
 // export default Count;
 
-import React from "react";
-import Navbar from "./Navbar";
-import { updateCountAdd } from "./Count1";
-import { updateCountLess } from "./Count2";
+// import React from "react";
+// import Navbar from "./Navbar";
+// import { updateCountAdd } from "./Count1";
+// import { updateCountLess } from "./Count2";
 
-function Count() {
+// function Count() {
+//   return (
+//     <>
+//       <Navbar />
+//       <updateCountAdd.Consumer>
+//         {(count) => (
+//           <updateCountLess.Consumer>
+//             {(less) => (
+//               <h1>
+//                 This is add: {count} and this is less: {less}
+//               </h1>
+//             )}
+//           </updateCountLess.Consumer>
+//         )}
+//       </updateCountAdd.Consumer>
+//     </>
+//   );
+// }
+
+// export default Count;
+
+import React, { useState } from "react";
+import Navbar from "./Navbar";
+import Count1 from "./Count1";
+import Count2 from "./Count2";
+import Count3 from "./Count3";
+
+const Count = () => {
+  const [count, setCount] = useState(0);
+
+  const onClickHandleIncrement = () => {
+    setCount(count + 1);
+    console.log(count);
+    //this is print the count value in console//
+  };
+  const onClickHandleDecrement = () => {
+    setCount(count - 1);
+    console.log(count);
+    //this is print the count value in console//
+  };
+
   return (
     <>
       <Navbar />
-      <updateCountAdd.Consumer>
-        {(count) => (
-          <updateCountLess.Consumer>
-            {(less) => (
-              <h1>
-                This is add: {count} and this is less: {less}
-              </h1>
-            )}
-          </updateCountLess.Consumer>
-        )}
-      </updateCountAdd.Consumer>
+      <Count3 count={count} />
+      <Count1 onIncrement={onClickHandleIncrement} />
+      <Count2 onDecrement={onClickHandleDecrement} />
     </>
   );
-}
+};
 
 export default Count;
